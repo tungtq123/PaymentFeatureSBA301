@@ -1,14 +1,14 @@
 package com.buildings.entity.enums;
 
 public enum RequestStatus {
-    PENDING, 
+    PENDING,
     VERIFYING,
-    QUOTING, 
-    WAITING_APPROVAL, 
-    APPROVED, 
+    QUOTING,
+    WAITING_APPROVAL,
+    APPROVED,
     IN_PROGRESS,
-    COMPLETED, 
-    RESIDENT_ACCEPTED, 
-    CANCELLED, 
+    COMPLETED,
+    RESIDENT_ACCEPTED,
+    CANCELLED,
     REJECTED
 }

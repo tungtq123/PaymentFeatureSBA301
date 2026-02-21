@@ -3,7 +3,7 @@ package com.buildings.exception;
 import com.buildings.dto.ApiResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.AccessDeniedException;
+//import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -61,14 +61,14 @@ public class GlobalExceptionHandler {
     }
     
     // 4. Xử lý lỗi Access Denied (Spring Security)
-    @ExceptionHandler(value = AccessDeniedException.class)
-    ResponseEntity<ApiResponse<?>> handlingAccessDeniedException(AccessDeniedException exception) {
-        ErrorCode errorCode = ErrorCode.UNAUTHORIZED;
-
-        return ResponseEntity.status(errorCode.getStatusCode())
-                .body(ApiResponse.builder()
-                        .code(errorCode.getCode())
-                        .message(errorCode.getMessage())
-                        .build());
-    }
+//    @ExceptionHandler(value = AccessDeniedException.class)
+//    ResponseEntity<ApiResponse<?>> handlingAccessDeniedException(AccessDeniedException exception) {
+//        ErrorCode errorCode = ErrorCode.UNAUTHORIZED;
+//
+//        return ResponseEntity.status(errorCode.getStatusCode())
+//                .body(ApiResponse.builder()
+//                        .code(errorCode.getCode())
+//                        .message(errorCode.getMessage())
+//                        .build());
+//    }
 }

@@ -1,7 +1,7 @@
 package com.buildings.entity.enums;
 
 public enum ItemType {
-    MATERIAL, 
-    LABOR, 
+    MATERIAL,
+    LABOR,
     OUTSOURCE
 }

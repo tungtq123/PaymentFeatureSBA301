@@ -1,21 +1,44 @@
 package com.buildings.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "apartments")
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
-public class Apartment extends BaseEntity{
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Apartment extends BaseEntity {
 
-    private String code;
+    @Column(nullable = false)
+    private String name;
+
+    // ===============================
+    // RELATIONSHIPS
+    // ===============================
+
+    @ManyToOne
+    @JsonBackReference
+    private Building building;
+
+
+    @OneToMany(mappedBy = "apartment")
+    @JsonIgnore
+    private List<User> users;
+
+
+
+    @OneToMany(mappedBy = "apartment")
+    @JsonIgnore
+    private List<Bill> bills;
+
 }
